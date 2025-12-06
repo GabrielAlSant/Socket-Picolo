@@ -3,7 +3,7 @@ import {type KafkaConfig, logLevel, type Producer, type Consumer, Kafka} from 'k
 const kafkaConfig: KafkaConfig = {
     logLevel: logLevel.NOTHING,
     clientId: 'my-app',
-    brokers: ['192.168.1.107:9092']
+    brokers: ['127.0.0.1:9092']
 };
 
 const kafka = new Kafka(kafkaConfig);
