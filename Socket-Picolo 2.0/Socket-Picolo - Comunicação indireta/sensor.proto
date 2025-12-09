@@ -1,0 +1,25 @@
+// Define o contrato protobuf das leituras (amostras) e médias trocadas entre serviços.
+
+syntax = "proto3";
+
+message Amostra {
+  string origem = 1;
+  double temperatura = 2;
+  double umidade = 3;
+  double insolacao = 4;
+}
+
+message Media {
+  string origem = 1;
+  double temperatura = 2;
+  double umidade = 3;
+  double insolacao = 4;
+  uint32 amostras = 5;
+}
+
+message Envelope {
+  oneof payload {
+    Amostra amostra = 1;
+    Media media = 2;
+  }
+}
